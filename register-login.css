@@ -1,0 +1,39 @@
+* {box-sizing: border-box}
+
+head {
+  font-family: 'Open Sans', sans-serif;
+}
+
+header {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+}
+
+#register {
+  font-size: 18px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  color: #333333;
+  padding: 20px;
+  cursor: pointer;
+  margin: 30px;
+  display: inline;
+  float: left;
+}
+
+
+#login {
+  font-size: 18px;
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  color: #333333;
+  padding: 20px;
+  cursor: pointer;
+  margin: 30px;
+  display: inline;
+  float: right;
+
+}
