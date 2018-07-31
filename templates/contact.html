@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300|PT+Sans" rel="stylesheet">
+    <!--Linking the html, js, css files-->
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="javascript" href="javascript.js">
+
+    <style>
+      body{
+        box-sizing: border-box;
+      }
+
+
+      </style>
+
+    <title> Survivin' </title>
+  </head>
+  <body>
+
+    <header>
+      <div id="logo">
+      <img src="../assets/LOGO.png" height="90" width="90">
+      </div>
+      <center><h1> Survivin' </h1></center>
+        <div class="button" style="width:100%">
+        <button style="width:10%">LOG IN  SIGN UP </button>
+        </div>
+
+
+      <nav> <center>
+        <div class="btn-group" style="width:100%">
+        <button style="width:17%"> Home </button>
+        <button style="width:17%"> Our Mission </button>
+        <button style="width:17%"> Resources </button>
+        <button style="width:17%"> Situations </button>
+        </div>
+        </center>
+
+      </nav>
+    <!-- make a search bar -->
+    <!-- make a log in / sign up thing -->
+      </header>
+
+
+      <div class="container">
+<div style="text-align:center">
+  <h2>Contact Us</h2>
+  <p>Swing by for a cup of coffee, or leave us a message:</p>
+</div>
+<div class="row">
+  <div class="column">
+    <div id="map" style="width:100%;height:500px"></div>
+  </div>
+  <div class="column">
+    <form action="/action_page.php">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+      <label for="country">Country</label>
+      <select id="country" name="country">
+        <option value="australia">Australia</option>
+        <option value="canada">Canada</option>
+        <option value="usa">USA</option>
+      </select>
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</div>
+</div>
+
+        <!-- CHAT -->
+        <script id="cid0020000194047384808" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"survivinchat","arch":"js","styles":{"a":"000000","b":69,"c":"FFFFFF","d":"FFFFFF","f":69,"i":69,"k":"000000","l":"000000","m":"000000","n":"FFFFFF","o":69,"p":"10","q":"000000","r":69,"pos":"br","cv":1,"cvfntsz":"20px","cvbg":"000000","cvbga":69,"cvfg":"ffff66","cvw":167,"cvh":42}}</script>
+  </body>
+</html>
