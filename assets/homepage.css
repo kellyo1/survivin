@@ -1,11 +1,4 @@
-h1 {
-  font-size: 90px;
-  top:60px;
-}
 
-h2{
-  font-size: 20px;
-}
 
 #logo {
   position:absolute;
@@ -25,11 +18,14 @@ header {
 }
 
 h1 {
+  font-size: 90px;
+  top:60px;
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(to right, rgb(255, 243, 127), rgb(255, 247, 168));
 }
 
 h2 {
+  font-size: 20px;
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(to right, rgb(255, 243, 127), rgb(255, 247, 168));
 }
