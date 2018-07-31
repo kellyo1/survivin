@@ -39,7 +39,7 @@ class MainHandler(webapp2.RequestHandler):
             url = users.create_login_url('/')
             url_text = "login"
 
-        template = jinja_environment.get_template('index.html')
+        template = jinja_environment.get_template('mainpage.html')
         self.response.out.write(template.render(url = url, url_text = url_text))
 
 class AboutHandler(webapp2.RequestHandler):
