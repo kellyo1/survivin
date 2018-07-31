@@ -40,7 +40,7 @@ class MainHandler(webapp2.RequestHandler):
             url_text = "login"
 
         template = jinja_environment.get_template('index.html')
-        self.response.out.write(template.render( url = url, url_text = url_text))
+        self.response.out.write(template.render(url = url, url_text = url_text))
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
