@@ -70,14 +70,33 @@ class SituationsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('situations.html')
         self.response.out.write(template.render())
 
+class RespectHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-respect.html')
+        self.response.out.write(template.render())
+
+# class MainHandler(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('mainpage.html')
+#         self.response.out.write(template.render())
+#
+# class MainHandler(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('mainpage.html')
+#         self.response.out.write(template.render())
+#
+# class MainHandler(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('mainpage.html')
+#         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
     ('/resources', ResourcesHandler),
     ('/situations', SituationsHandler),
-    ('/hotlinesuk', UKHotlines),
-    ('/hotlinesus', USHotlines),
+    ('/hotlinesuk', UKHandler),
+    ('/hotlinesus', USHandlers),
     ('/advice', AdviceHandler),
     ('/app-recs', AppsHandler)
 ], debug=True)
