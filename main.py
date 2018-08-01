@@ -27,18 +27,6 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(template
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
-        # currentUser = users.get_current_user()
-        #
-        # if currentUser:
-        #     nickname = currentUser.nickname()
-        #
-        #     url = users.create_login_url("/")
-        #     url_text = "logout"
-        # else:
-        #     url = users.create_login_url('/')
-        #     url_text = "login"
-
         template = jinja_environment.get_template('mainpage.html')
         self.response.out.write(template.render())
 
@@ -57,9 +45,79 @@ class SituationsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('situations.html')
         self.response.out.write(template.render())
 
+class UkHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('hotlines-uk.html')
+        self.response.out.write(template.render())
+
+class UsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('hotlines-us.html')
+        self.response.out.write(template.render())
+
+class AdviceHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('advice.html')
+        self.response.out.write(template.render())
+
+class AppsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('app-recs.html')
+        self.response.out.write(template.render())
+
+class SituationsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations.html')
+        self.response.out.write(template.render())
+
+class RespectHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-respect.html')
+        self.response.out.write(template.render())
+
+class AwkwardHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-awkward.html')
+        self.response.out.write(template.render())
+
+class PeerHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-peer.html')
+        self.response.out.write(template.render())
+
+class ChasedHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-chased.html')
+        self.response.out.write(template.render())
+
+class MentalHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-mental.html')
+        self.response.out.write(template.render())
+
+class CalmHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-calm.html')
+        self.response.out.write(template.render())
+
+# class Handler(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('.html')
+#         self.response.out.write(template.render())
+
 app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
     ('/resources', ResourcesHandler),
-    ('/situations', SituationsHandler)
+    ('/hotlinesuk', UkHandler),
+    ('/hotlinesus', UsHandler),
+    ('/advice', AdviceHandler),
+    ('/app-recs', AppsHandler),
+    ('/situations', SituationsHandler),
+    ('/situations-respect', RespectHandler),
+    ('/situations-awkward', AwkwardHandler),
+    ('/situations-peer', PeerHandler),
+    ('/situations-chased', ChasedHandler),
+    ('/situations-mental', MentalHandler),
+    ('/situations-calm', CalmHandler)
 ], debug=True)
