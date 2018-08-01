@@ -40,11 +40,6 @@ class MainHandler(webapp2.RequestHandler):
         #     url_text = "login"
 
         template = jinja_environment.get_template('mainpage.html')
-        self.response.out.write(template.render(url = url, url_text = url_text))
-
-class AboutHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('aboutus.html')
         self.response.out.write(template.render())
 
 class AboutHandler(webapp2.RequestHandler):
@@ -52,17 +47,19 @@ class AboutHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('aboutus.html')
         self.response.out.write(template.render())
 
-class OutputHandler(webapp2.RequestHandler):
-    def post(self): #Use post if you will be receiving information
+class ResourcesHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('resources.html')
+        self.response.out.write(template.render())
 
-        #'userInput' is also name in the textarea in about.html
-        inputFromAbout = self.request.get('userInput')
-
-        template = jinja_environment.get_template('output.html')
-        self.response.out.write(template.render(data=inputFromAbout))
+class SituationsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations.html')
+        self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
-    ('/output', OutputHandler)
+    ('/resources', ResourcesHandler),
+    ('/situations', SituationsHandler)
 ], debug=True)
