@@ -70,14 +70,54 @@ class SituationsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('situations.html')
         self.response.out.write(template.render())
 
+class RespectHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-respect.html')
+        self.response.out.write(template.render())
+
+class AwkwardHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-awkward.html')
+        self.response.out.write(template.render())
+
+class PeerHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-peer.html')
+        self.response.out.write(template.render())
+
+class ChasedHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-chased.html')
+        self.response.out.write(template.render())
+
+class MentalHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-mental.html')
+        self.response.out.write(template.render())
+
+class CalmHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations-calm.html')
+        self.response.out.write(template.render())
+
+# class Handler(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('.html')
+#         self.response.out.write(template.render())
 
 app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
     ('/resources', ResourcesHandler),
-    ('/situations', SituationsHandler),
-    ('/hotlinesuk', UKHotlines),
-    ('/hotlinesus', USHotlines),
+    ('/hotlinesuk', UKHandler),
+    ('/hotlinesus', USHandler),
     ('/advice', AdviceHandler),
-    ('/app-recs', AppsHandler)
+    ('/app-recs', AppsHandler),
+    ('/situations', SituationsHandler),
+    ('/situations-respect', RespectHandler),
+    ('/situations-awkward', AwkwardHandler),
+    ('/situations-peer', PeerHandler),
+    ('/situations-chased', MainHandler),
+    ('/situations-mental', MainHandler),
+    ('/situations-calm', MainHandler)
 ], debug=True)
