@@ -117,7 +117,7 @@ app = webapp2.WSGIApplication([ #dont forget the commas
     ('/situations-respect', RespectHandler),
     ('/situations-awkward', AwkwardHandler),
     ('/situations-peer', PeerHandler),
-    ('/situations-chased', MainHandler),
-    ('/situations-mental', MainHandler),
-    ('/situations-calm', MainHandler)
+    ('/situations-chased', ChasedHandler),
+    ('/situations-mental', MentalHandler),
+    ('/situations-calm', CalmHandler)
 ], debug=True)
