@@ -27,18 +27,6 @@ jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(template
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
-        # currentUser = users.get_current_user()
-        #
-        # if currentUser:
-        #     nickname = currentUser.nickname()
-        #
-        #     url = users.create_login_url("/")
-        #     url_text = "logout"
-        # else:
-        #     url = users.create_login_url('/')
-        #     url_text = "login"
-
         template = jinja_environment.get_template('mainpage.html')
         self.response.out.write(template.render())
 
@@ -57,9 +45,39 @@ class SituationsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('situations.html')
         self.response.out.write(template.render())
 
+class UKHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('hotlines-uk.html')
+        self.response.out.write(template.render())
+
+class USHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('hotlines-us.html')
+        self.response.out.write(template.render())
+
+class AdviceHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('advice.html')
+        self.response.out.write(template.render())
+
+class AppsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('app-recs.html')
+        self.response.out.write(template.render())
+
+class SituationsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('situations.html')
+        self.response.out.write(template.render())
+
+
 app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
     ('/resources', ResourcesHandler),
-    ('/situations', SituationsHandler)
+    ('/situations', SituationsHandler),
+    ('/hotlinesuk', UKHotlines),
+    ('/hotlinesus', USHotlines),
+    ('/advice', AdviceHandler),
+    ('/app-recs', AppsHandler)
 ], debug=True)
