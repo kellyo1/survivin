@@ -45,12 +45,12 @@ class SituationsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('situations.html')
         self.response.out.write(template.render())
 
-class UKHandler(webapp2.RequestHandler):
+class UkHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('hotlines-uk.html')
         self.response.out.write(template.render())
 
-class USHandler(webapp2.RequestHandler):
+class UsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('hotlines-us.html')
         self.response.out.write(template.render())
@@ -109,15 +109,15 @@ app = webapp2.WSGIApplication([ #dont forget the commas
     ('/', MainHandler),
     ('/aboutus', AboutHandler),
     ('/resources', ResourcesHandler),
-    ('/hotlinesuk', UKHandler),
-    ('/hotlinesus', USHandler),
+    ('/hotlinesuk', UkHandler),
+    ('/hotlinesus', UsHandler),
     ('/advice', AdviceHandler),
     ('/app-recs', AppsHandler),
     ('/situations', SituationsHandler),
     ('/situations-respect', RespectHandler),
     ('/situations-awkward', AwkwardHandler),
     ('/situations-peer', PeerHandler),
-    ('/situations-chased', MainHandler),
-    ('/situations-mental', MainHandler),
-    ('/situations-calm', MainHandler)
+    ('/situations-chased', ChasedHandler),
+    ('/situations-mental', MentalHandler),
+    ('/situations-calm', CalmHandler)
 ], debug=True)
