@@ -19,7 +19,7 @@ header {
 
 h1 {
   font-size: 90px;
-  top:60px;
+  top: 60px;
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(to right, rgb(255, 243, 127), rgb(255, 247, 168));
 }
@@ -62,20 +62,6 @@ body {
   cursor: pointer;
 
 }
-
-
-
-h1 {
-  text-decoration: underline;
-  color: white;
-  font-family: 'PT Sans', sans-serif;
-}
-body {
-  background-color: black;
-  color: white;
-  font-family: 'PT Sans', sans-serif;
-}
-
 
 .btn-group button:hover {
     background-color: #FFF8A5;
